@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "speedo", "C:\Users\rolli_000\OneDrive\My STI Files\Source Codes\HO Portal\speedo\", "{14CD8624-C7A5-4BF5-A951-B47ABA27EB74}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/MySTIHQ"
+		Debug.AspNetCompiler.PhysicalPath = "..\Speedo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\MySTIHQ\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/MySTIHQ"
+		Release.AspNetCompiler.PhysicalPath = "..\Speedo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\MySTIHQ\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6973"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14CD8624-C7A5-4BF5-A951-B47ABA27EB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CD8624-C7A5-4BF5-A951-B47ABA27EB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

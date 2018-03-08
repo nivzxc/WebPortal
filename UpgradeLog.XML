@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Speedo">
+</Property><Property Name="Solution File" Value="D:\Projects\Portal\Speedo.sln">
+</Property><Property Name="User Options File" Value="D:\Projects\Portal\Speedo.suo">
+</Property><Property Name="Date" Value="Monday, May 23, 2011">
+</Property><Property Name="Time" Value="21:44 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Speedo.sln" Description="File successfully backed up as D:\Projects\Portal\Backup\Speedo.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Speedo.suo" Description="File successfully backed up as D:\Projects\Portal\Backup\Speedo.suo">
+</Event><Event ErrorLevel="1" Project="Portal" Source="..\Portal" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="" Source="Speedo.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Speedo.sln" Description="Converted">
+</Event></UpgradeLog>

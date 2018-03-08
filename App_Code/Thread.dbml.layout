@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 21" name="Thread">
+  <DataContextMoniker Name="/ThreadDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2f81207d-a93c-4917-9232-b6376e743e80" absoluteBounds="7.125, 6, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/ThreadDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ff2c86a-c386-426d-81f4-8f60d689174d" absoluteBounds="7.1400000000000006, 6.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28180d5e-db5c-4649-b6a7-0f0501b2333b" absoluteBounds="2.25, 5.125, 2, 15.616599934895834">
+      <DataClassMoniker Name="/ThreadDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="babc5338-4932-4abb-8e86-d493af63d20a" absoluteBounds="2.265, 5.585, 1.9700000000000002, 15.056599934895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85d87848-6834-4d3b-935d-82454948c1dd" absoluteBounds="4.5, 0.5, 2, 4.2708154296875">
+      <DataClassMoniker Name="/ThreadDataContext/Thread" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93018084-7bef-4379-8fb5-e32e60312de0" absoluteBounds="4.515, 0.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f8fff0ad-e106-4ff1-8f38-9a9a0c8fbce9" absoluteBounds="1.375, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd4d8a1b-9e56-4ebb-bdd3-b853684a4643" absoluteBounds="1.3900000000000001, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 1.86620198567708); (4.5 : 1.86620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ThreadDataContext/ThreadCategory/ThreadCategory_Thread" />
+      <nodes>
+        <classShapeMoniker Id="f8fff0ad-e106-4ff1-8f38-9a9a0c8fbce9" />
+        <classShapeMoniker Id="85d87848-6834-4d3b-935d-82454948c1dd" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2c7e1e12-eb90-463a-a839-edd864aa4df3" absoluteBounds="1.375, 3.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d25a6a5e-c8f0-43d2-9090-aad00b43d761" absoluteBounds="1.3900000000000001, 3.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.375 : 3.5); (2.375 : 3.23240397135417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ThreadDataContext/ThreadGroup/ThreadGroup_ThreadCategory" />
+      <nodes>
+        <classShapeMoniker Id="2c7e1e12-eb90-463a-a839-edd864aa4df3" />
+        <classShapeMoniker Id="f8fff0ad-e106-4ff1-8f38-9a9a0c8fbce9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="344f37d3-4d67-40ce-b4ed-20dd555c7530" absoluteBounds="7.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadReply" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b98d5253-63f5-4839-99e8-5154320ff97d" absoluteBounds="7.5150000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 1.38544840494792); (7.5 : 1.38544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ThreadDataContext/Thread/Thread_ThreadReply" />
+      <nodes>
+        <classShapeMoniker Id="85d87848-6834-4d3b-935d-82454948c1dd" />
+        <classShapeMoniker Id="344f37d3-4d67-40ce-b4ed-20dd555c7530" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="347e0cb7-b096-4e59-a906-7a6cc4eb2ac5" absoluteBounds="7.375, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadTypesUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96999ab6-2801-4bc1-8238-2e6e87adf3a8" absoluteBounds="7.3900000000000006, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15c9426f-b68b-45c0-a105-9c6653a00dc3" absoluteBounds="4.75, 5.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadPrivateUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cf7cdac-d149-427e-8168-a7204767a88e" absoluteBounds="4.765, 5.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 4.7708154296875); (5.625 : 5.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ThreadDataContext/Thread/Thread_ThreadPrivateUser" />
+      <nodes>
+        <classShapeMoniker Id="85d87848-6834-4d3b-935d-82454948c1dd" />
+        <classShapeMoniker Id="15c9426f-b68b-45c0-a105-9c6653a00dc3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="844015cb-7e02-4aa7-9b58-f7935f981c9a" absoluteBounds="4.75, 7, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f499e14-33d5-4e01-91fd-05985741066c" absoluteBounds="4.7650000000000006, 7.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1a51713-ce16-47a1-9f1c-9ece2f7a3899" absoluteBounds="7.375, 2.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ThreadDataContext/ThreadType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ca58976-4393-4910-ba28-891b8f49f00a" absoluteBounds="7.39, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.375 : 3.8862939453125); (8.375 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThreadDataContext/ThreadType/ThreadType_ThreadTypesUser" />
+      <nodes>
+        <classShapeMoniker Id="c1a51713-ce16-47a1-9f1c-9ece2f7a3899" />
+        <classShapeMoniker Id="347e0cb7-b096-4e59-a906-7a6cc4eb2ac5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

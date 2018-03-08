@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MySTIHQ110523" Class="PortalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=elda;Initial Catalog=MySTIHQ110523;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MySTIHQ110523ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="Portal.EventGame" Member="EventGames">
+    <Type Name="EventGame">
+      <Column Name="GameID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GamePhase" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WinnerTeamID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsFinished" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="EventGame_EventGameOfficial" Member="EventGameOfficials" ThisKey="GameID" OtherKey="GameID" Type="EventGameOfficial" />
+      <Association Name="EventGame_EventGameTeamPlayer" Member="EventGameTeamPlayers" ThisKey="GameID" OtherKey="GameID" Type="EventGameTeamPlayer" />
+      <Association Name="EventGame_EventGameTeam" Member="EventGameTeams" ThisKey="GameID" OtherKey="GameID" Type="EventGameTeam" />
+      <Association Name="Event_EventGame" Member="Event" ThisKey="EventID" OtherKey="EventID" Type="Event" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventCategories" Member="EventCategories">
+    <Type Name="EventCategory">
+      <Column Name="EventCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="EventCategory_Event" Member="Events" ThisKey="EventCategoryID" OtherKey="EventCategoryID" Type="Event" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventDivisions" Member="EventDivisions">
+    <Type Name="EventDivision">
+      <Column Name="EventDivisionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="EventDivision_Event" Member="Events" ThisKey="EventDivisionID" OtherKey="EventDivisionID" Type="Event" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Events" Member="Events">
+    <Type Name="Event">
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ScoringTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventDivisionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventCategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaxPoint" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WinnerTeamID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Event_EventGame" Member="EventGames" ThisKey="EventID" OtherKey="EventID" Type="EventGame" />
+      <Association Name="Event_EventTeamScore" Member="EventTeamScores" ThisKey="EventID" OtherKey="EventID" Type="EventTeamScore" />
+      <Association Name="EventCategory_Event" Member="EventCategory" ThisKey="EventCategoryID" OtherKey="EventCategoryID" Type="EventCategory" IsForeignKey="true" />
+      <Association Name="EventDivision_Event" Member="EventDivision" ThisKey="EventDivisionID" OtherKey="EventDivisionID" Type="EventDivision" IsForeignKey="true" />
+      <Association Name="ScoringType_Event" Member="ScoringType" ThisKey="ScoringTypeID" OtherKey="ScoringTypeID" Type="ScoringType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ScoringTypes" Member="ScoringTypes">
+    <Type Name="ScoringType">
+      <Column Name="ScoringTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="ScoringType_Event" Member="Events" ThisKey="ScoringTypeID" OtherKey="ScoringTypeID" Type="Event" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Team" Member="Teams">
+    <Type Name="Team">
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ColorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captain" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ViceCaptain" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TeamLogo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Team_TeamMember" Member="TeamMembers" ThisKey="TeamID" OtherKey="TeamID" Type="TeamMember" />
+      <Association Name="Team_EventGameTeamPlayer" Member="EventGameTeamPlayers" ThisKey="TeamID" OtherKey="TeamID" Type="EventGameTeamPlayer" />
+      <Association Name="Team_EventGameTeam" Member="EventGameTeams" ThisKey="TeamID" OtherKey="TeamID" Type="EventGameTeam" />
+      <Association Name="Team_EventTeamScore" Member="EventTeamScores" ThisKey="TeamID" OtherKey="TeamID" Type="EventTeamScore" />
+    </Type>
+  </Table>
+  <Table Name="Portal.TeamMember" Member="TeamMembers">
+    <Type Name="TeamMember">
+      <Column Name="TeamMemberID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DraftNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DraftOverall" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DraftCategory" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Team_TeamMember" Member="Team" ThisKey="TeamID" OtherKey="TeamID" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Committee" Member="Committees">
+    <Type Name="Committee">
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Activity_Committee" Member="Activity" ThisKey="ActivityID" OtherKey="ActivityID" Type="Activity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Achievements" Member="Achievements">
+    <Type Name="Achievement">
+      <Column Name="AchievementID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Achievement" Member="Achievement1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Activity_Achievement" Member="Activity" ThisKey="ActivityID" OtherKey="ActivityID" Type="Activity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Activities" Member="Activities">
+    <Type Name="Activity">
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Activity_Committee" Member="Committees" ThisKey="ActivityID" OtherKey="ActivityID" Type="Committee" />
+      <Association Name="Activity_Achievement" Member="Achievements" ThisKey="ActivityID" OtherKey="ActivityID" Type="Achievement" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventGameOfficials" Member="EventGameOfficials">
+    <Type Name="EventGameOfficial">
+      <Column Name="GameOfficialID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OfficialID" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="EventGame_EventGameOfficial" Member="EventGame" ThisKey="GameID" OtherKey="GameID" Type="EventGame" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventGameTeamPlayer" Member="EventGameTeamPlayers">
+    <Type Name="EventGameTeamPlayer">
+      <Column Name="GameTeamPlayerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="EventGame_EventGameTeamPlayer" Member="EventGame" ThisKey="GameID" OtherKey="GameID" Type="EventGame" IsForeignKey="true" />
+      <Association Name="Team_EventGameTeamPlayer" Member="Team" ThisKey="TeamID" OtherKey="TeamID" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventGameTeam" Member="EventGameTeams">
+    <Type Name="EventGameTeam">
+      <Column Name="GameTeamID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GameID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Score" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="EventGame_EventGameTeam" Member="EventGame" ThisKey="GameID" OtherKey="GameID" Type="EventGame" IsForeignKey="true" />
+      <Association Name="Team_EventGameTeam" Member="Team" ThisKey="TeamID" OtherKey="TeamID" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.EventTeamScore" Member="EventTeamScores">
+    <Type Name="EventTeamScore">
+      <Column Name="EventTeamScoreID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TeamID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rank" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Event_EventTeamScore" Member="Event" ThisKey="EventID" OtherKey="EventID" Type="Event" IsForeignKey="true" />
+      <Association Name="Team_EventTeamScore" Member="Team" ThisKey="TeamID" OtherKey="TeamID" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="Portal.InsertErrorLog" Method="InsertErrorLog">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Class" Parameter="class" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Method" Parameter="method" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Details" Parameter="details" Type="System.String" DbType="Text" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

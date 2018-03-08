@@ -1,0 +1,53 @@
+﻿/* Remove unwanted elements */
+#header, #nav, .noprint, #Head1, #div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9, #div10, #div11,#div12, #none
+{
+	display: none;
+	width:1%;
+}
+
+/* Ensure the content spans the full width */
+#container, #container2, #content
+{
+	width: 100%;
+	height:10%;
+	margin: 0;
+	float: none;
+}
+
+/* Change text colour to black (useful for light text on a dark background) */
+.lighttext
+{
+	color: #000;
+}
+
+/* Improve colour contrast of links */
+a:link, a:visited
+{
+	display: none;
+	color: #781351;
+}
+
+
+button
+{
+	display:none;
+}
+
+@page :first {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+	margin-bottom: 0px;	
+	
+	
+}
+
+body {background:white; 
+     font-size:10pt; 
+     margin:0; zoom:100%;
+     background-position: center center;
+    background-position: 45% 55%; 
+
+     
+     }
+

@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TwoPanel.master.cs" Inherits="App_Master_TwoPanel" %>
+<%@ Register Assembly="FlashControl" Namespace="Bewise.Web.UI.WebControls" TagPrefix="Bewise" %>
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35"
+ Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+<%@ Import Namespace="HqWeb.Forums" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+     <title>The Official STI Head Office Website</title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+
+       <!--ADDED BY CALVIN CAVITE FEB 15, 2018-->
+    <script src="/js/jquery-3.2.1.min.js"></script>  
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="Stylesheet" href ="/css/bootstrap.min.css"/>      
+
+    <meta name="keywords" content="ajax,jquery,jquery plugins,master multimedia,yahoo widget,web applications" />
+    <link rel="stylesheet" type="text/css" href="../print.css" media="print" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="Stylesheet" type="text/css" href="../Portal.css" />
+    <link type="text/css" rel="stylesheet" href="../Support/GroupUpdate/style.css"/>
+    <link type="text/css" rel="stylesheet" href="../Support/ImageSlider/base.css"/>
+    <link type="text/css" rel="stylesheet" href="../Support/ImageSlider/default/theme.css"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.accessible-news-slider.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <div id="header">
+
+            <div id="headerUser">
+                <div id="headerUserDate">
+                    <asp:Label ID="lblDate" runat="server" Text="September 30, 2012" 
+                        Font-Bold="True" Font-Size="14pt"></asp:Label>
+                </div>
+                <div id="headerUserImage"><% LoadPicture(); %></div>
+                <div id="headerUserLink">
+                    <asp:Label ID="lblDay" runat="server" Text="Wednesday" Font-Bold="True"  Font-Size="16px" Height="25px"></asp:Label>
+                    <br />
+                    <asp:HyperLink runat="server" ID="HyperLink16" NavigateUrl="~/Default.aspx"  Text="Home" CssClass="HyperLink"></asp:HyperLink>
+                    <br />
+<%--                    <asp:HyperLink runat="server" ID="HyperLink20" NavigateUrl="~/RewardPoint/EmployeeRewardList.aspx"  Text="My Rewards" CssClass="HyperLink"></asp:HyperLink>
+                    <br />--%>
+                    <asp:HyperLink runat="server" ID="HyperLink18"  Text="Settings" CssClass="HyperLink" NavigateUrl="~/Userpage/ControlPanel.aspx"></asp:HyperLink>
+                    <br />
+                    <asp:HyperLink runat="server" ID="HyperLink19" NavigateUrl="~/Logout.aspx" Text="Logout" CssClass="HyperLink"></asp:HyperLink></div>
+            </div>
+            <div id="headerBanner">
+                    <asp:HyperLink ID="HyperLink21" runat="server" ImageUrl="~/logo/philfirstaniv_slider1.jpg" NavigateUrl="~/Default.aspx"   Width="648px" Height="195px">HyperLink</asp:HyperLink>
+                    <%--<img src="http://hq.sti.edu/app_master/vision_mission.gif" Height="117px" Loop="True" Width="648px" />--%>
+<%--                <Bewise:FlashControl ID="FlashControl1" runat="server" MovieUrl="~/App_Master/portal_flash_banner.swf" Height="117px" Loop="True" Width="648px" />--%>
+<%--            <asp:HyperLink ID="HyperLink21" runat="server" ImageUrl="~/Support/announcement.png" NavigateUrl="~/Default.aspx"   Width="648px" Height="117px">HyperLink</asp:HyperLink>
+--%>            </div>           
+            <div id="headerLogo">
+                <a id="logoContent" href="<%= Page.ResolveUrl("~/Default.aspx") %>" style="text-decoration:none; margin-left:20px;"><asp:Image ID="Image1" runat="server" ImageUrl="~/logo/PFIClogo.jpg" margin-left="20px"  Width="151px" Height="153px"/></a>
+                <%--<a href="<%= Page.ResolveUrl("~/Default.aspx") %>" style="text-decoration:none"><asp:Image ID="Image1" runat="server" ImageUrl="~/Support/stilogo_login.png"  Width="190px" Height="117px"/></a>--%>
+            </div>
+        </div>
+        <div id="contentWhole">
+            <asp:ContentPlaceHolder ID="cphBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>

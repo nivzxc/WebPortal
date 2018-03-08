@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MySTIHQ110523" Class="ThreadDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=elda;Initial Catalog=MySTIHQ110523;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MySTIHQ110523ConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="Users.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pword" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="firname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="midname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="nickname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="brthdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="emptitle" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="online" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="lastlog" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="userclss" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pstatus" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="HR.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="pimage" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="empnum" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="firname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="midname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="midintl" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="nickname" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="brthdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="etypcode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="esttcode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="suffix" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="comcode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="emername" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="emerrltn" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="emeraddr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="emerphon" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emercell" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="brthplac" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="citizen" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="height" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="weigth" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="bloodtyp" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="hobbies" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="langspok" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cstatus" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="fthrname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fthrdbrt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="mthrname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mthrdbrt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="spsename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="spsedbrt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="permaddr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="permcity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="permphon" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="curraddr" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="currcity" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="currphon" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="primmobl" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="altrmobl" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="drctnmbr" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="lcalnmbr" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="faxnmbr" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="emailofc" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="emailper" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="schdcode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="sssid" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="philid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="taxid" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="hdmfid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="hmoid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="bankacct" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="divicode" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="grpcode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="deptcode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="rccode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="jgcode" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="assgnmnt" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="datestrt" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="datereg" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dateend" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateby" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="updateon" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="skillpri" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="skillsec" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="proctime" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="pstatus" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="billable" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="rsgncode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="rsgnrmks" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="rsgndsrd" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="rsrccode" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="rsrcrmks" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="Portal.Threads" Member="Threads">
+    <Type Name="Thread">
+      <Column Name="ThreadID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadCategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ThreadTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Contents" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsAllowedReply" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPosted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsPrivate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSticky" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PostedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PostedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastPostBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LastPostDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalReply" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AttachedFileDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AttachedFileName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Thread_ThreadReply" Member="ThreadReplies" ThisKey="ThreadID" OtherKey="ThreadID" Type="ThreadReply" />
+      <Association Name="Thread_ThreadPrivateUser" Member="ThreadPrivateUsers" ThisKey="ThreadID" OtherKey="ThreadID" Type="ThreadPrivateUser" />
+      <Association Name="ThreadCategory_Thread" Member="ThreadCategory" ThisKey="ThreadCategoryID" OtherKey="ThreadCategoryID" Type="ThreadCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadCategories" Member="ThreadCategories">
+    <Type Name="ThreadCategory">
+      <Column Name="ThreadCategoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadGroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TotalThreads" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastPostDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastPostBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="LastPostThreadID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastPostThread" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ThreadCategory_Thread" Member="Threads" ThisKey="ThreadCategoryID" OtherKey="ThreadCategoryID" Type="Thread" />
+      <Association Name="ThreadGroup_ThreadCategory" Member="ThreadGroup" ThisKey="ThreadGroupID" OtherKey="ThreadGroupID" Type="ThreadGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadGroups" Member="ThreadGroups">
+    <Type Name="ThreadGroup">
+      <Column Name="ThreadGroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ThreadGroup_ThreadCategory" Member="ThreadCategories" ThisKey="ThreadGroupID" OtherKey="ThreadGroupID" Type="ThreadCategory" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadReply" Member="ThreadReplies">
+    <Type Name="ThreadReply">
+      <Column Name="ThreadReplyID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ReplyContents" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateReply" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Thread_ThreadReply" Member="Thread" ThisKey="ThreadID" OtherKey="ThreadID" Type="Thread" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadTypesUsers" Member="ThreadTypesUsers">
+    <Type Name="ThreadTypesUser">
+      <Column Name="ThreadTypeUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="ThreadType_ThreadTypesUser" Member="ThreadType" ThisKey="ThreadTypeID" OtherKey="ThreadTypeID" Type="ThreadType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadPrivateUsers" Member="ThreadPrivateUsers">
+    <Type Name="ThreadPrivateUser">
+      <Column Name="ThreadUserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Thread_ThreadPrivateUser" Member="Thread" ThisKey="ThreadID" OtherKey="ThreadID" Type="Thread" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadView" Member="ThreadViews">
+    <Type Name="ThreadView">
+      <Column Name="ThreadViewID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThreadID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DateViewed" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Portal.ThreadTypes" Member="ThreadTypes">
+    <Type Name="ThreadType">
+      <Column Name="ThreadTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPrivate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ThreadType_ThreadTypesUser" Member="ThreadTypesUsers" ThisKey="ThreadTypeID" OtherKey="ThreadTypeID" Type="ThreadTypesUser" />
+    </Type>
+  </Table>
+</Database>

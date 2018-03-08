@@ -1,0 +1,113 @@
+		
+		* { 
+			margin:0; 
+			padding:0; 
+			border:none; 
+			border-collapse:collapse; 
+		}
+ 
+		h1 {
+			margin-top: 1em;
+			}
+			
+		h2 {
+			margin-top: 1em;
+		}
+		
+		h3 {
+			margin-top: 1em;
+		}
+		
+		p { 
+			margin-top: 1em;
+		}
+		
+		#body {
+			font-family:tahoma, verdana, arial, helvetica, geneva, sans-serif;
+		}
+		
+		#bottomDivision {
+			position:absolute;
+			width:100%;
+			height:.25in;
+			top:0;right:0;bottom:0;left:0;
+			border-style: none;
+			margin-top: 10.5in;
+		}
+ 
+		@media print {
+			#bottomDivision {
+				position:absolute;
+				width:100%;
+				height: 0;
+				top:0;right:0;bottom:0;left:0;
+				border-style: none;
+				margin-top: 10.25in;
+			}
+		}
+	
+		#copyrightDivision {
+			position: absolute;
+			width: 90%;
+			text-align: center;
+			font-size: xx-small;
+			bottom: 0;
+			background-color: fuchsia ;
+		}
+		
+		#insideTheMargins { 
+			position: relative;
+			height: 9.5in;
+			margin-top: .5in; /* print adds this to its margin */
+			margin-bottom: .5in;
+			margin-left: .75in;
+			margin-right: .75in;
+			background-color: aqua;
+		}
+		
+		@media print {
+			#insideTheMargins {  
+				position: relative;
+				height: 9.5in;
+				margin-left: .5in;
+				margin-right: .5in;
+				margin-top: 0;
+				margin-bottom: -.25;
+				z-index: 10;
+			}
+		}
+		
+		#mainDivision {
+			width: 8.5in; 
+			height: 10.5in;
+			position: absolute;
+			left: 50%;
+			margin-left: -4.25in;
+			margin-right: 0;
+			margin-top: .25in;
+			margin-bottom: 0;
+			background-color: yellow;
+			
+		}		
+			
+		@media print {
+			#mainDivision {
+				width: 8.5in; 
+				height: 10.25in;
+				position: absolute;
+				left: 1%;
+				margin-left: -4.25in;
+				margin-right: 0;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding: 0;
+			}
+		}
+		
+		#outerDivision {
+			position:fixed;
+			width:100%;
+			top:0;right:0;bottom:0;left:0;
+			border-style: none;
+		}
+ 
