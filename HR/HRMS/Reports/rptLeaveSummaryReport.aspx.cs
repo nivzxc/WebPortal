@@ -10,28 +10,32 @@ using HRMS;
 
 public partial class HR_HRMS_Reports_rptLeaveSummaryReport : System.Web.UI.Page
 {
+    float[] total_days;
+    int[] total_leav_filed;
+    string[] employee_nm;
+    string[] division_nm;
 
-	//private DataTable GetMonths()
-	//{
-	//    DataTable months = new DataTable();
+    //private DataTable GetMonths()
+    //{
+    //    DataTable months = new DataTable();
 
-	//    using (SqlConnection cn = new SqlConnection(clsSpeedo.SpeedoConnectionString))
-	//    {
-	//        SqlCommand cmd = cn.CreateCommand();
-	//        cmd.CommandText = "SELECT tspcode, tspfrom, tspto FROM HR.TimeSheetPeriod WHERE YEAR(tspfrom) = @TargetYear AND tspmode='M' ORDER BY tspcode DESC";
-	//        cmd.Parameters.Add(new SqlParameter("@TargetYear", DateTime.Now.Year.ToString()));
-	//        SqlDataAdapter da = new SqlDataAdapter(cmd);
-	//        da.Fill(months);
-	//    }
+    //    using (SqlConnection cn = new SqlConnection(clsSpeedo.SpeedoConnectionString))
+    //    {
+    //        SqlCommand cmd = cn.CreateCommand();
+    //        cmd.CommandText = "SELECT tspcode, tspfrom, tspto FROM HR.TimeSheetPeriod WHERE YEAR(tspfrom) = @TargetYear AND tspmode='M' ORDER BY tspcode DESC";
+    //        cmd.Parameters.Add(new SqlParameter("@TargetYear", DateTime.Now.Year.ToString()));
+    //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+    //        da.Fill(months);
+    //    }
 
-	//    return months;
-	//}
+    //    return months;
+    //}
 
-	private DataTable GetMonths()
+    private DataTable GetMonths()
 	{
-		DataTable months = new DataTable();
+		DataTable months = new DataTable();       
 
-		using (SqlConnection cn = new SqlConnection(clsSpeedo.SpeedoConnectionString))
+        using (SqlConnection cn = new SqlConnection(clsSpeedo.SpeedoConnectionString))
 		{
 			string fiscalYear = "";
 			DateTime lastProcess = DateTime.Now;
@@ -134,11 +138,7 @@ public partial class HR_HRMS_Reports_rptLeaveSummaryReport : System.Web.UI.Page
 	}
     public void getLeaveSummary(DateTime datefrom, DateTime dateto)
     {
-        float total_days = 0;
-        int tota_leav_filed = 0;
-        string employee_nm = "";
-        string division_nm = "";
-
+        int array_counter = 0;
         using (SqlConnection cn = new SqlConnection(clsHrms.HrmsConnectionString))
         {
             cn.Open();
@@ -147,8 +147,14 @@ public partial class HR_HRMS_Reports_rptLeaveSummaryReport : System.Web.UI.Page
             cmd.Parameters.Add(new SqlParameter("", datefrom));
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read()) {
-
+                total_days[array_counter] = float.Parse(dr["TOTAL_Days"].ToString());
+                total_leav_filed[array_counter] = Int32.Parse(dr["TOTAL_LEAVE_FILED"].ToString());
+                employee_nm[array_counter] = dr["EMPLOYEE"].ToString();
+                division_nm[array_counter] = dr["DIVISION_NAME"].ToString();
+                array_counter++;
             }
+            dr.Close();
+            cn.Close();
         }
     }
 

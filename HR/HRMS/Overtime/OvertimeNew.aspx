@@ -62,7 +62,7 @@
           <td class="GridRows">
            <ew:CalendarPopup ID="dtpFromDate" runat="server" AutoPostBack="true" PopupLocation="Bottom" ControlDisplay="TextBoxImage" ImageUrl="~/Support/kworldclock22.png" TextBoxLabelStyle-Width="60px" TextBoxLabelStyle-Font-Size="X-Small" TextBoxLabelStyle-Font-Bold="true" ondatechanged="dtpFromDate_DateChanged"></ew:CalendarPopup>
            &nbsp;
-           <ew:TimePicker ID="dtpFromTime" runat="server" DisplayUnselectableTimes="true" RoundUpMinutes="false" DisableTextBoxEntry="false" AutoPostBack="true" TextBoxLabelStyle-Width="50px" ImageUrl="~/Support/Time22.png" ControlDisplay="TextBoxImage" TextBoxLabelStyle-Font-Size="X-Small" TextBoxLabelStyle-Font-Bold="true" ontimechanged="dtpFromTime_TimeChanged"></ew:TimePicker>
+           <ew:TimePicker ID="dtpFromTime" runat="server" DisplayUnselectableTimes="true" RoundUpMinutes="false" DisableTextBoxEntry="false" AutoPostBack="true" TextBoxLabelStyle-Width="50px" ImageUrl="~/Support/    .png" ControlDisplay="TextBoxImage" TextBoxLabelStyle-Font-Size="X-Small" TextBoxLabelStyle-Font-Bold="true" ontimechanged="dtpFromTime_TimeChanged"></ew:TimePicker>
           </td>
          </tr>
          <tr>
