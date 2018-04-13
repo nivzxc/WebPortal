@@ -66,7 +66,7 @@
          <div class="container" style="background-color:white;width:50%; height:50px;"> 
              <div class="row">
                <div class="col-xs-8" style="background-color:;">
-                     Copyright © 2018 Philippine First Inusrance Inc. All rights reserved.                     
+                     Copyright © 2018 Philippines First Insurance Inc. All rights reserved.                     
                </div>
                 <div class="col-xs-4">
                     <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">About Us</a>
