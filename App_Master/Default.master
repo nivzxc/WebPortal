@@ -101,33 +101,46 @@
 <%--            <img src="http://hq.sti.edu/support/valentino/heart.gif" style="position:absolute;margin-left:-10px;height:95px; width:auto; top: 80px; z-index: inherit;">--%>
 <%--            <img src="http://hq.sti.edu/support/valentino/heart.gif" style="position:absolute;margin-left:-10px;height:95px; width:auto; top: 80px; z-index: inherit;">--%>
   <%--                      <img src="http://hq.sti.edu/support/valentino/heart.png" style="position:absolute;margin-left:-20px;height:70px; width:auto;">--%>
-                <div id="headerUserDate">
-                    <asp:Label ID="lblDate" runat="server" Text="September 30, 2012" 
-                        Font-Bold="True" Font-Size="14pt"></asp:Label>
+                          
+                <div class="row">
+                    <div class="col-lg-12" id="headerUserImage" style="">
+                    <% LoadPicture(); %>                   
+                    </div>
                 </div>
-                <div id="headerUserImage"><% LoadPicture(); %></div>
-
-                <div id="headerUserLink">
-                    <asp:Label ID="lblDay" runat="server" Text="Wednesday" Font-Bold="True"  Font-Size="16px" Height="25px"></asp:Label>
-                    <br />
-                    <asp:HyperLink runat="server" ID="HyperLink16" NavigateUrl="~/Default.aspx"  Text="Home" CssClass="HyperLink"></asp:HyperLink>
-                    <br />
-                      <asp:HyperLink runat="server" ID="HyperLink6" NavigateUrl="~/EmployeeJournal/EmployeeJournalList.aspx"  Text="Journal" CssClass="HyperLink"></asp:HyperLink>
+                <div class="row">
+                      <div id="headerUserDate" class="col-xs-6">
+                        <asp:Label ID="lblDate" runat="server" Text="September 30, 2012" Font-Bold="True" Font-Size="9pt"></asp:Label>, 
+                        <asp:Label ID="lblDay" runat="server" Text="Wednesday" Font-Bold="True"  Font-Size="12px" Height="25px"></asp:Label>                    
+                      </div>  
+                     <div class="col-xs-6 dropdown">
+                            <font style="font-weight:bold; font-size:15px;"> Welcome </font> 
+                            <a class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><asp:Label ID="Usernm" runat="server" Text="User" Font-Size="12px" Height="25px"></asp:Label><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><asp:HyperLink runat="server" ID="HyperLink16" NavigateUrl="~/Default.aspx"  Text="Home" CssClass="HyperLink"></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" ID="HyperLink18"  Text="Settings" CssClass="HyperLink" NavigateUrl="~/Userpage/ControlPanel.aspx"></asp:HyperLink></li>
+                                <li><asp:HyperLink runat="server" ID="HyperLink19" NavigateUrl="~/Logout.aspx" Text="Logout" CssClass="HyperLink"></asp:HyperLink></li>
+                            </ul>
+                        </div>
+                </div>
+                <div class="row">                     
+                       
+                </div>                          
+                <div id="headerUserLink">                                   
+                    <br />                    
+<%--                    <br />
+                      <asp:HyperLink runat="server" ID="HyperLink6" NavigateUrl="~/EmployeeJournal/EmployeeJournalList.aspx"  Text="Journal" CssClass="HyperLink"></asp:HyperLink>--%>
                      <br />
 <%--                    <asp:HyperLink runat="server" ID="HyperLink20" NavigateUrl="~/RewardPoint/EmployeeRewardList.aspx"  Text="My Rewards" CssClass="HyperLink"></asp:HyperLink>
                     <br />--%>
-                    <asp:HyperLink runat="server" ID="HyperLink18"  Text="Settings" CssClass="HyperLink" NavigateUrl="~/Userpage/ControlPanel.aspx"></asp:HyperLink>
+                    
                     <br />
-                    <asp:HyperLink runat="server" ID="HyperLink19" NavigateUrl="~/Logout.aspx" Text="Logout" CssClass="HyperLink"></asp:HyperLink>
+                    
                 </div>
             </div>
             <div id="headerBanner">      
                
                     <div id="banner" class="carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#banner" data-slide-to="0" class="active"></li>
-                            <li data-target="#banner" data-slide-to="1"></li>
-                        </ol>
+                      
                         <div class="carousel-inner">
                             <div class="item active">
                                 <asp:HyperLink ID="HyperLink21" runat="server" ImageUrl="~/logo/philfirstaniv_slider1.jpg" NavigateUrl="~/Default.aspx"   Width="648px" Height="195px">HyperLink</asp:HyperLink>
@@ -136,21 +149,20 @@
                                 <asp:HyperLink ID="HyperLink5" runat="server" ImageUrl="~/logo/pfic_old_slider.jpg" NavigateUrl="~/Default.aspx"   Width="648px" Height="195px">HyperLink</asp:HyperLink>
                             </div>
                         </div>
-                        <a class="left carousel-control" href="#banner" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left"></span>
-                          <span class="sr-only">Previous</span>
+                        
+                        <a class="left carousel-control" href="#banner" data-slide="prev">                         
                         </a>
-                        <a class="right carousel-control" href="#banner" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right"></span>
-                          <span class="sr-only">Next</span>
+
+                        <a class="right carousel-control" href="#banner" data-slide="next">                        
                         </a>
                     </div>
               
                     <%--<Bewise:FlashControl ID="FlashControl1" runat="server" MovieUrl="~/App_Master/portal_flash_banner.swf" Height="117px" Loop="True" Width="648px" />--%>
             </div> 
             
-            <div id="headerLogo">           
-                <a id="logoContent" href="<%= Page.ResolveUrl("~/Default.aspx") %>" style="text-decoration:none; margin-left:20px;"><asp:Image ID="Image1" runat="server" ImageUrl="~/logo/PFIClogo.jpg" margin-left="20px"  Width="151px" Height="153px"/></a>
+            <div id="headerLogo" style="background-color:;>
+             
+                  <a id="logoContent" href="<%= Page.ResolveUrl("~/Default.aspx") %>" style="text-decoration:none; margin-left:20px;"><asp:Image ID="Image1" runat="server" ImageUrl="~/logo/PFIClogo.jpg" margin-left="" Width="151px" Height="153px"/></a>
 <%--                <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/Support/stilogo_login.png" NavigateUrl="~/Default.aspx"   Width="190px" Height="117px">HyperLink</asp:HyperLink>
 --%>        </div>
         </div>

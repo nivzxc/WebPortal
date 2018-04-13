@@ -6,10 +6,10 @@
     <script type="text/javascript" src="jquery.accessible-news-slider.js"></script>
      <script type="text/javascript">
             // when the DOM is ready, convert the feed anchors into feed content
-            jQuery(document).ready(function () {
+            //jQuery(document).ready(function () {
 
-                jQuery('#newsslider').accessNews({""});
-            });
+            //    jQuery('#newsslider').accessNews({""});
+            //});
     </script>
 </asp:Content>
 <asp:Content ID="cntDefault" ContentPlaceHolderID="cphBody" runat="Server" Visible="true">

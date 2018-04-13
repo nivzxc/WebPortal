@@ -628,7 +628,7 @@ public partial class App_Master_Default : System.Web.UI.MasterPage
             string strpUserName = Request.Cookies["Speedo"]["UserName"].ToString();
             //imgpnlavatar.ImageUrl = "~/pictures/realpicture/" + clsSpeedo.GetRealPicture(strpUserName) + ".jpg";
 
-            strWrite = "<div id='headerUserImage'><a href='" + clsSystemConfigurations.PortalRootURL + "/Userpage/Userpage.aspx?username=" + strpUserName + "'><img id='imgpnlavatar' src='" + clsSystemConfigurations.PortalRootURL + "/pictures/realpicture/" + clsSpeedo.GetRealPicture(strpUserName) + ".jpg' style='height:90px;width:90px;' /></a></div>";
+            strWrite = "<div id='headerUserImage'><a href='" + clsSystemConfigurations.PortalRootURL + "/Userpage/Userpage.aspx?username=" + strpUserName + "'><img class='circle-image' id='imgpnlavatar' src='" + clsSystemConfigurations.PortalRootURL + "/pictures/realpicture/" + clsSpeedo.GetRealPicture(strpUserName) + ".jpg'/></a></div>";
             Response.Write(strWrite);
         }
         catch
@@ -713,7 +713,7 @@ public partial class App_Master_Default : System.Web.UI.MasterPage
                 //this.LoadLatestSchedule();
 
             }
-
+            Usernm.Text=clsUsers.GetName(Request.Cookies["Speedo"]["UserName"].ToString());
             //if (GetActiveEventName() != string.Empty)
             //{
             //    LoadActiveTeamScores();

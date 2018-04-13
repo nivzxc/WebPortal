@@ -135,7 +135,7 @@ namespace HRMS
                 cmd.ExecuteNonQuery();
                 _strLeaveCode = cmd.Parameters["@leavcode"].Value.ToString();
     tran.Commit();
-    blnReturn = true;
+    blnReturn = true; 
    //}
   /// catch { tran.Rollback(); blnReturn = false; }
    //finally { cn.Close(); }
